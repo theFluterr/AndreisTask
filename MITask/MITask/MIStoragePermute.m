@@ -19,10 +19,6 @@
     return self;
 }
 
--(NSArray*)returnNumericArray{
-    return storageNumberArray;
-}
-
 -(NSArray*)returnAlphabeticArray {
     for (NSNumber *number in storageNumberArray)
         [finalOutput addObject:[storageAlphabeticArray objectAtIndex:[number intValue]]];
@@ -39,17 +35,30 @@
     return secondIndex;
 }
 
--(void)permuteArrayOfNumbers {
+-(void)swapFirstInteger:(int)first andSecond:(int)second andSortAfterIndex:(int)firstIndex  withSecondIndex:(int)secondIndex{
+
+    NSMutableArray *mutableCopy = [[NSMutableArray alloc] initWithArray:storageNumberArray];
+    [mutableCopy replaceObjectAtIndex:firstIndex withObject:[NSNumber numberWithInt:second]];
+    [mutableCopy replaceObjectAtIndex:secondIndex withObject:[NSNumber numberWithInt:first]];
+    
+    NSArray *sortingArray = [mutableCopy objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstIndex + 1, [storageNumberArray count] - 1 - firstIndex)]];
+    sortingArray = [sortingArray sortedArrayUsingSelector:@selector(compare:)];
+    [mutableCopy replaceObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstIndex + 1, [storageNumberArray count] -1 - firstIndex)] withObjects:sortingArray];
+    
+    storageNumberArray = (NSArray *)mutableCopy;
+}
+
+-(void)permuteArrayOfNumbers:(int)times {
     int first = 0;
     int second = 0;
     int firstIndex = 0;
-    int checkForCompletion = 1;
+    int iterationNumber = 0;
     BOOL isPermuted = false;
     int i = 0;
     while (isPermuted == NO) {
         
         //NSLog(@"%@", [self returnAlphabeticArray]);
-        checkForCompletion++;
+        iterationNumber++;
         for (i = (int)[storageNumberArray count] - 2; i >= 0; --i) {
             if ([storageNumberArray objectAtIndex:i] < [storageNumberArray objectAtIndex:i+1]){
                 first = [[storageNumberArray objectAtIndex:i] intValue];
@@ -58,31 +67,17 @@
             }
         }
         
-        if (checkForCompletion == 1000000){
+        if (iterationNumber == times){
             isPermuted = YES;
             NSLog(@"%@", [self returnAlphabeticArray]);
         }
-        
+    
         else {
             
             int secondIndex = [self findSecondIntegerIndex:storageNumberArray forFirstInteger:first afterIndex:firstIndex + 1 andLastIndex:(int)[storageNumberArray count] - 1];
             second = [[storageNumberArray objectAtIndex:secondIndex] intValue];
-    
-        
-        NSMutableArray *mutableCopy = [[NSMutableArray alloc] initWithArray:storageNumberArray];
-        [mutableCopy replaceObjectAtIndex:firstIndex withObject:[NSNumber numberWithInt:second]];
-        [mutableCopy replaceObjectAtIndex:secondIndex withObject:[NSNumber numberWithInt:first]];
-        
             
-            
-        NSArray *sortingArray = [mutableCopy objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstIndex + 1, [storageNumberArray count] - 1 - firstIndex)]];
-        sortingArray = [sortingArray sortedArrayUsingSelector:@selector(compare:)];
-        
-        [mutableCopy replaceObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(firstIndex + 1, [storageNumberArray count] -1 - firstIndex)] withObjects:sortingArray];
-            
-        storageNumberArray = (NSArray *)mutableCopy;
-            
-            
+            [self swapFirstInteger:first andSecond:second andSortAfterIndex:firstIndex withSecondIndex:secondIndex];
         }
     }
 }

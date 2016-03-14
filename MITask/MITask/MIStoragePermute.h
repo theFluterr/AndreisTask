@@ -14,8 +14,7 @@
     NSArray* storageAlphabeticArray;
 }
 
--(NSArray*)returnNumericArray;
 -(NSArray*)returnAlphabeticArray;
--(void)permuteArrayOfNumbers;
+-(void)permuteArrayOfNumbers:(int)times;
 
 @end
