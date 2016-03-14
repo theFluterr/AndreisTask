@@ -13,8 +13,8 @@
 -(id)init {
     self = [super init];
     if (!self) return nil;
-    storageNumberArray = @[@0, @1, @2, @3];
-    storageAlphabeticArray = @[@"A", @"B", @"C", @"D"];
+    storageNumberArray = @[@0, @1, @2, @3, @4, @5, @6, @7, @8, @9];
+    storageAlphabeticArray = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J"];
     finalOutput = [NSMutableArray new];
     return self;
 }
@@ -26,8 +26,8 @@
 -(NSArray*)returnAlphabeticArray {
     for (NSNumber *number in storageNumberArray)
         [finalOutput addObject:[storageAlphabeticArray objectAtIndex:[number intValue]]];
-    if ([finalOutput count] > 4)
-        [finalOutput removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 4)]];
+    if ([finalOutput count] > 10)
+        [finalOutput removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 10)]];
     return finalOutput;
 }
 
@@ -43,15 +43,14 @@
     int first = 0;
     int second = 0;
     int firstIndex = 0;
-    int checkForCompletion = 0;
+    int checkForCompletion = 1;
     BOOL isPermuted = false;
     int i = 0;
     while (isPermuted == NO) {
         
-        NSLog(@"%@", [self returnAlphabeticArray]);
-    
+        //NSLog(@"%@", [self returnAlphabeticArray]);
+        checkForCompletion++;
         for (i = (int)[storageNumberArray count] - 2; i >= 0; --i) {
-            checkForCompletion = i;
             if ([storageNumberArray objectAtIndex:i] < [storageNumberArray objectAtIndex:i+1]){
                 first = [[storageNumberArray objectAtIndex:i] intValue];
                 firstIndex = i;
@@ -59,8 +58,10 @@
             }
         }
         
-        if (i == -1)
+        if (checkForCompletion == 1000000){
             isPermuted = YES;
+            NSLog(@"%@", [self returnAlphabeticArray]);
+        }
         
         else {
             
