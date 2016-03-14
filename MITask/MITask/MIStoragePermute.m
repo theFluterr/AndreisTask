@@ -35,11 +35,12 @@
     int firstIndex = 0;
     int checkForCompletion = 0;
     BOOL isPermuted = false;
+    int i = 0;
     while (isPermuted == NO) {
         
         NSLog(@"%@", storageNumberArray);
     
-        for (int i = (int)[storageNumberArray count] - 2; i >= 0; --i) {
+        for (i = (int)[storageNumberArray count] - 2; i >= 0; --i) {
             checkForCompletion = i;
             if ([storageNumberArray objectAtIndex:i] < [storageNumberArray objectAtIndex:i+1]){
                 first = [[storageNumberArray objectAtIndex:i] intValue];
@@ -48,7 +49,7 @@
             }
         }
         
-        if (checkForCompletion == -1)
+        if (i == -1)
             isPermuted = YES;
         
         else {
