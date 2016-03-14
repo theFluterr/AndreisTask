@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface MIStoragePermute : NSObject {
-    NSArray* storageIndexArray;
+    NSMutableArray *finalOutput;
     NSArray* storageNumberArray;
+    NSArray* storageAlphabeticArray;
 }
 
 -(NSArray*)returnNumericArray;
-
+-(NSArray*)returnAlphabeticArray;
 -(void)permuteArrayOfNumbers;
 
 @end

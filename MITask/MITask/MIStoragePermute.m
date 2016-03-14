@@ -14,11 +14,21 @@
     self = [super init];
     if (!self) return nil;
     storageNumberArray = @[@0, @1, @2, @3];
+    storageAlphabeticArray = @[@"A", @"B", @"C", @"D"];
+    finalOutput = [NSMutableArray new];
     return self;
 }
 
 -(NSArray*)returnNumericArray{
     return storageNumberArray;
+}
+
+-(NSArray*)returnAlphabeticArray {
+    for (NSNumber *number in storageNumberArray)
+        [finalOutput addObject:[storageAlphabeticArray objectAtIndex:[number intValue]]];
+    if ([finalOutput count] > 4)
+        [finalOutput removeObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 4)]];
+    return finalOutput;
 }
 
 -(int)findSecondIntegerIndex:(NSArray*)array forFirstInteger:(int)firstInteger afterIndex:(int)index andLastIndex:(int)lastIndex{
@@ -38,7 +48,7 @@
     int i = 0;
     while (isPermuted == NO) {
         
-        NSLog(@"%@", storageNumberArray);
+        NSLog(@"%@", [self returnAlphabeticArray]);
     
         for (i = (int)[storageNumberArray count] - 2; i >= 0; --i) {
             checkForCompletion = i;
@@ -53,25 +63,10 @@
             isPermuted = YES;
         
         else {
-        
-        //int secondIndex = firstIndex + 1;
             
             int secondIndex = [self findSecondIntegerIndex:storageNumberArray forFirstInteger:first afterIndex:firstIndex + 1 andLastIndex:(int)[storageNumberArray count] - 1];
             second = [[storageNumberArray objectAtIndex:secondIndex] intValue];
     
-            /* for (int i = firstIndex + 1; i <= (int)[storageNumberArray count] - 1; i++) {
-            if ( [[storageNumberArray objectAtIndex:i] intValue] > first && [[storageNumberArray objectAtIndex:i] intValue]< [[storageNumberArray objectAtIndex:secondIndex] intValue])
-                secondIndex = i;
-                second = [[storageNumberArray objectAtIndex:i] intValue];
-        
-        }*/
-            
-    
-        //int temp = first;
-        //first = second;
-        //second = temp;
-           // NSLog(@"%d", firstIndex + 1);
-            
         
         NSMutableArray *mutableCopy = [[NSMutableArray alloc] initWithArray:storageNumberArray];
         [mutableCopy replaceObjectAtIndex:firstIndex withObject:[NSNumber numberWithInt:second]];
