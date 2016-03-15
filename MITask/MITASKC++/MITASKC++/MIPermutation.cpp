@@ -26,16 +26,34 @@ int findSecondIntegerIndex(int array[], int first, int index, int lastIndex) {
     return secondIndex;
 }
 
-int findDifference (const void *intOne, const void *intTwo){
-    return ( *(int *)intOne - *(int *)intTwo );
-}
-
 int* swapAndSort(int first, int second, int firstIndex, int secondIndex, int array[10]) {
     array[firstIndex] = second;
     array[secondIndex] = first;
-    qsort(array + firstIndex + 1,  sizeof(array[0])*10/sizeof(int) - firstIndex - 1, sizeof(array[1]), findDifference);
-    int *c = array;
-    return c;
+    int size = 10 - firstIndex - 1;
+    int sortingArray[size];
+    for (int i = 0; i < size; i++){
+        sortingArray[i] = array[i + firstIndex + 1];
+    
+    }
+    std::size_t sizeArr = sizeof(sortingArray)/sizeof(sortingArray[0]);
+    std::sort(sortingArray, sortingArray+sizeArr);
+    for (int i = firstIndex + 1; i < 10; i++) {
+        array[i] = sortingArray[i - firstIndex - 1];
+    }
+    return array;
+}
+
+
+
+int returnAlphabeticArray(int array[]) {
+    char storageAlphabeticArray[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    char finalOutput[10];
+    for (int i = 0; i < 10; i++) {
+        int k = array[i];
+        finalOutput[i] = storageAlphabeticArray[k];
+        printf("%c", finalOutput[i]);
+    }
+    return 0;
 }
 
 void MIStorage::permutateArrayOfNumbers(int times) {
@@ -60,14 +78,18 @@ void MIStorage::permutateArrayOfNumbers(int times) {
         }
         
         if (iterationNumber == times || i == -1) {
-            cout << "FIN";
+            cout << "FIN\n";
+            ::returnAlphabeticArray(storageNumberArray);
+            printf("\n");
             isPermuted = true;
             }
         int secondIndex = findSecondIntegerIndex(storageNumberArray, first, firstIndex + 1, sizeof(storageNumberArray)/sizeof(int) - 1);
         second = storageNumberArray [secondIndex];
         
+            int *newArrPointer = swapAndSort(first, second, firstIndex, secondIndex, storageNumberArray);
+            
         for (int j = 0; j < sizeof(storageNumberArray)/sizeof(int); j++) {
-            storageNumberArray[j] = swapAndSort(first, second, firstIndex, secondIndex, storageNumberArray)[j];
+            storageNumberArray[j] = newArrPointer[j];
         }
         
     }

@@ -15,7 +15,7 @@ class MIStorage {
     char storageAlphabeticArray[10];
 public:
     void permutateArrayOfNumbers (int times);
-    char returnAlphabeticArray;
+    void returnAlphabeticArray (int array);
     
 };
 
