@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface MIDivisionPermutation : NSObject {
-    
+    NSMutableDictionary *storageDictionary;
+    NSMutableArray *outputArray;
 }
+
+-(void)calculatePermutationNumber:(int)required;
 
 @end
