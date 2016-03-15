@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75B1CF3A1C982FF500E8D10F /* MIDivisionPermutation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B1CF391C982FF500E8D10F /* MIDivisionPermutation.m */; settings = {ASSET_TAGS = (); }; };
-		75B7CBAF1C96DE0A002436A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7CBAE1C96DE0A002436A4 /* main.m */; };
-		75B7CBB71C96DF12002436A4 /* MIStoragePermute.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B7CBB61C96DF12002436A4 /* MIStoragePermute.m */; settings = {ASSET_TAGS = (); }; };
+		750571751C986ECF0024143E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 750571741C986ECF0024143E /* main.cpp */; };
+		7505717D1C9870A00024143E /* MIPermutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7505717C1C9870A00024143E /* MIPermutation.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		75B7CBA91C96DE0A002436A4 /* CopyFiles */ = {
+		7505716F1C986ECF0024143E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,16 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		75B1CF381C982FF500E8D10F /* MIDivisionPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIDivisionPermutation.h; sourceTree = "<group>"; };
-		75B1CF391C982FF500E8D10F /* MIDivisionPermutation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIDivisionPermutation.m; sourceTree = "<group>"; };
-		75B7CBAB1C96DE0A002436A4 /* MITask */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MITask; sourceTree = BUILT_PRODUCTS_DIR; };
-		75B7CBAE1C96DE0A002436A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		75B7CBB51C96DF12002436A4 /* MIStoragePermute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIStoragePermute.h; sourceTree = "<group>"; };
-		75B7CBB61C96DF12002436A4 /* MIStoragePermute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIStoragePermute.m; sourceTree = "<group>"; };
+		750571711C986ECF0024143E /* MITASKC++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "MITASKC++"; sourceTree = BUILT_PRODUCTS_DIR; };
+		750571741C986ECF0024143E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7505717B1C986F650024143E /* MIPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPermutation.h; sourceTree = "<group>"; };
+		7505717C1C9870A00024143E /* MIPermutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MIPermutation.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		75B7CBA81C96DE0A002436A4 /* Frameworks */ = {
+		7505716E1C986ECF0024143E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,100 +41,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		75B7CBA21C96DE09002436A4 = {
+		750571681C986ECF0024143E = {
 			isa = PBXGroup;
 			children = (
-				75B7CBAD1C96DE0A002436A4 /* MITask */,
-				75B7CBAC1C96DE0A002436A4 /* Products */,
+				750571731C986ECF0024143E /* MITASKC++ */,
+				750571721C986ECF0024143E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		75B7CBAC1C96DE0A002436A4 /* Products */ = {
+		750571721C986ECF0024143E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75B7CBAB1C96DE0A002436A4 /* MITask */,
+				750571711C986ECF0024143E /* MITASKC++ */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		75B7CBAD1C96DE0A002436A4 /* MITask */ = {
+		750571731C986ECF0024143E /* MITASKC++ */ = {
 			isa = PBXGroup;
 			children = (
-				75B7CBAE1C96DE0A002436A4 /* main.m */,
-				75B7CBB51C96DF12002436A4 /* MIStoragePermute.h */,
-				75B7CBB61C96DF12002436A4 /* MIStoragePermute.m */,
-				75B1CF381C982FF500E8D10F /* MIDivisionPermutation.h */,
-				75B1CF391C982FF500E8D10F /* MIDivisionPermutation.m */,
+				750571741C986ECF0024143E /* main.cpp */,
+				7505717B1C986F650024143E /* MIPermutation.h */,
+				7505717C1C9870A00024143E /* MIPermutation.cpp */,
 			);
-			path = MITask;
+			path = "MITASKC++";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		75B7CBAA1C96DE0A002436A4 /* MITask */ = {
+		750571701C986ECF0024143E /* MITASKC++ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75B7CBB21C96DE0A002436A4 /* Build configuration list for PBXNativeTarget "MITask" */;
+			buildConfigurationList = 750571781C986ECF0024143E /* Build configuration list for PBXNativeTarget "MITASKC++" */;
 			buildPhases = (
-				75B7CBA71C96DE0A002436A4 /* Sources */,
-				75B7CBA81C96DE0A002436A4 /* Frameworks */,
-				75B7CBA91C96DE0A002436A4 /* CopyFiles */,
+				7505716D1C986ECF0024143E /* Sources */,
+				7505716E1C986ECF0024143E /* Frameworks */,
+				7505716F1C986ECF0024143E /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MITask;
-			productName = MITask;
-			productReference = 75B7CBAB1C96DE0A002436A4 /* MITask */;
+			name = "MITASKC++";
+			productName = "MITASKC++";
+			productReference = 750571711C986ECF0024143E /* MITASKC++ */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		75B7CBA31C96DE09002436A4 /* Project object */ = {
+		750571691C986ECF0024143E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Andrei;
 				TargetAttributes = {
-					75B7CBAA1C96DE0A002436A4 = {
+					750571701C986ECF0024143E = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 75B7CBA61C96DE0A002436A4 /* Build configuration list for PBXProject "MITask" */;
+			buildConfigurationList = 7505716C1C986ECF0024143E /* Build configuration list for PBXProject "MITASKC++" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 75B7CBA21C96DE09002436A4;
-			productRefGroup = 75B7CBAC1C96DE0A002436A4 /* Products */;
+			mainGroup = 750571681C986ECF0024143E;
+			productRefGroup = 750571721C986ECF0024143E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				75B7CBAA1C96DE0A002436A4 /* MITask */,
+				750571701C986ECF0024143E /* MITASKC++ */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		75B7CBA71C96DE0A002436A4 /* Sources */ = {
+		7505716D1C986ECF0024143E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75B7CBB71C96DF12002436A4 /* MIStoragePermute.m in Sources */,
-				75B1CF3A1C982FF500E8D10F /* MIDivisionPermutation.m in Sources */,
-				75B7CBAF1C96DE0A002436A4 /* main.m in Sources */,
+				7505717D1C9870A00024143E /* MIPermutation.cpp in Sources */,
+				750571751C986ECF0024143E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		75B7CBB01C96DE0A002436A4 /* Debug */ = {
+		750571761C986ECF0024143E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -179,7 +173,7 @@
 			};
 			name = Debug;
 		};
-		75B7CBB11C96DE0A002436A4 /* Release */ = {
+		750571771C986ECF0024143E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -214,14 +208,14 @@
 			};
 			name = Release;
 		};
-		75B7CBB31C96DE0A002436A4 /* Debug */ = {
+		750571791C986ECF0024143E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		75B7CBB41C96DE0A002436A4 /* Release */ = {
+		7505717A1C986ECF0024143E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -231,25 +225,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		75B7CBA61C96DE0A002436A4 /* Build configuration list for PBXProject "MITask" */ = {
+		7505716C1C986ECF0024143E /* Build configuration list for PBXProject "MITASKC++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75B7CBB01C96DE0A002436A4 /* Debug */,
-				75B7CBB11C96DE0A002436A4 /* Release */,
+				750571761C986ECF0024143E /* Debug */,
+				750571771C986ECF0024143E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75B7CBB21C96DE0A002436A4 /* Build configuration list for PBXNativeTarget "MITask" */ = {
+		750571781C986ECF0024143E /* Build configuration list for PBXNativeTarget "MITASKC++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75B7CBB31C96DE0A002436A4 /* Debug */,
-				75B7CBB41C96DE0A002436A4 /* Release */,
+				750571791C986ECF0024143E /* Debug */,
+				7505717A1C986ECF0024143E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 75B7CBA31C96DE09002436A4 /* Project object */;
+	rootObject = 750571691C986ECF0024143E /* Project object */;
 }

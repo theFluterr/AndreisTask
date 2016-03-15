@@ -62,7 +62,7 @@
 -(void)permuteArrayOfNumbers:(int)times {
     int first = 0;
     int second = 0;
-    int firstIndex = 0;
+    int firstIndex = 0;  
     int iterationNumber = 0;
     BOOL isPermuted = false;
     int i = 0;
