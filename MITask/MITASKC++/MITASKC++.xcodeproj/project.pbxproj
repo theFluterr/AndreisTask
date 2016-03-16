@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		750571751C986ECF0024143E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 750571741C986ECF0024143E /* main.cpp */; };
 		7505717D1C9870A00024143E /* MIPermutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7505717C1C9870A00024143E /* MIPermutation.cpp */; settings = {ASSET_TAGS = (); }; };
+		754726BA1C98E22E005E7FE2 /* MIPermutationByDivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 754726B81C98E22E005E7FE2 /* MIPermutationByDivision.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		750571741C986ECF0024143E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7505717B1C986F650024143E /* MIPermutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPermutation.h; sourceTree = "<group>"; };
 		7505717C1C9870A00024143E /* MIPermutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MIPermutation.cpp; sourceTree = "<group>"; };
+		754726B71C98E20E005E7FE2 /* MIPermutationByDivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIPermutationByDivision.h; sourceTree = "<group>"; };
+		754726B81C98E22E005E7FE2 /* MIPermutationByDivision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MIPermutationByDivision.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				750571741C986ECF0024143E /* main.cpp */,
 				7505717B1C986F650024143E /* MIPermutation.h */,
 				7505717C1C9870A00024143E /* MIPermutation.cpp */,
+				754726B71C98E20E005E7FE2 /* MIPermutationByDivision.h */,
+				754726B81C98E22E005E7FE2 /* MIPermutationByDivision.cpp */,
 			);
 			path = "MITASKC++";
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7505717D1C9870A00024143E /* MIPermutation.cpp in Sources */,
+				754726BA1C98E22E005E7FE2 /* MIPermutationByDivision.cpp in Sources */,
 				750571751C986ECF0024143E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +247,7 @@
 				7505717A1C986ECF0024143E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

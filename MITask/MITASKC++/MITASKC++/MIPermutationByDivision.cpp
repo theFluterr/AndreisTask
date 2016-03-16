@@ -1,32 +1,28 @@
 //
-//  MIDivisionPermutation.m
-//  MITask
+//  MIPermutationByDivision.cpp
+//  MITASKC++
 //
-//  Created by Andrei on 15/03/16.
+//  Created by Andrei on 16/03/16.
 //  Copyright © 2016 Andrei. All rights reserved.
 //
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <iostream>
+#include <algorithm>
+#include <array>
 
-#import "MIDivisionPermutation.h"
+#include "MIPermutationByDivision.h"
+using namespace std;
 
-@implementation MIDivisionPermutation
-
--(id)init{
-    self = [super init];
-    if (!self) return nil;
- 
-    storageArray = [NSMutableArray arrayWithArray:@[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J"]];
-    outputArray = [NSMutableArray new];
-    return self;
-}
 //Find factorial
--(int)factorialRecursive:(int)operand
-{
+int factorialRecursive (int operand){
     if( operand == 1 || operand == 0) {
         return 1;
     } else if( operand < 0 ) {
         return(-1);
     }
-    return operand * [self factorialRecursive:operand-1];
+    return operand * ::factorialRecursive(operand - 1);
 }
 
 //Calculate required permutatuion:
@@ -36,23 +32,22 @@
 //Remove the object from storage
 //Decrease the required value (because we have "checked" some before)
 //Thus, we find required permutation by adding needed letters one by one
--(void)calculatePermutationNumber:(int)required {
+
+void MIStorageDivision::calculatePermutationNumber(int required){
     int multiplier = 0;
-    for (int i = 0; i < 10; i++){
-        
+    std::string storageString = "ABCDEFGHIJ";
+    for (int i = 0; i < 10; i++) {
         multiplier = 0;
-        int total = [self factorialRecursive:(int)[storageArray count ] - 1];
-        int index=0;
+        int total = ::factorialRecursive((int)(storageString.length()) - 1);
+        int index = 0;
         for (int g=1; multiplier<required;g++){
             multiplier=multiplier+total;
             index=g;
         }
         index--;
-        [outputArray addObject:[storageArray objectAtIndex:index]];
-        [storageArray removeObjectAtIndex:index];
-    required = required - total * index;
+        finalOutput += storageString[index];
+        storageString.erase(std::remove(storageString.begin(), storageString.end(), storageString[index]), storageString.end());
+        required = required - total * index;
     }
-    NSLog(@"%@", outputArray);
+    printf("%s\n", finalOutput.c_str());
 }
-
-@end
